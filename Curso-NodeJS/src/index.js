@@ -2,9 +2,12 @@
 *Crear un servidor con el modulo HTTP
 */
 var http = require('http');//Ejecutar JavaScript de lado del servidor
+var url  = require('url');
 var {info, error} = require('./modules/my-log');//Comillas simples y dobles para strings
 var consts = require('./utils/consts');
 var firebase = require('../libs/firebase');
+var {countries} = require("countries-list");
+
 
 var server = http.createServer(function (request, response){
     if(request.url== "/"){
@@ -25,7 +28,10 @@ var server = http.createServer(function (request, response){
         response.writeHead(200, {'Content-Type': 'text/html'});//Todo fue correcto
         response.write(result);//HTML de inicio que siempre va a mostrar
         response.end();
-    
+    }else if(request.url == "/country"){
+        response.writeHead(200, {'Content-Type': 'application/json'});//Todo fue correcto
+        response.write(JSON.stringify(countries.EC));//HTML de inicio que siempre va a mostrar
+        response.end();
     }else{
         response.writeHead(404, {'Content-Type': 'text/html'});//Todo fue correcto
         response.write('<html><body><p>Not Found</p></body></html>');//HTML de inicio que siempre va a mostrar
