@@ -1,91 +1,89 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="./jsFiles/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
 
 <body>
-<script src= "./jsFiles/app.js"></script>
-<div align="center">
-	<img src="https://sso.unileon.es/themes/unileon-metronic/img/main-title.png" >
-</div>
-<div align="center">
-		<h2>Ejercicio 1 de "Raul Capellan</h2>
-</div>
-	<div class="division">
-	<div class="panelDerecha">
-	    <h3>Instrucciones ejercicio 1: </h3>
-	    <p>Debes replicar los este ejercicio en dos ficheros: </p>
-	    <ul>	
-		    <li><t>Fichero index.html con el codigo HTML necesario para replicar elmismo contenido.</t></li>
-		    <li><t>Fichero style.css con el codigo CSS necesario para dar estilo al ejercicio.</t></li>
-		</ul>
-
-	    <p>Ademas debes cumplir los siguientes puntos: </p>
-	 	
-	 	<ul>
-			<li><t>Utilizar Github classroom para depositar el codigo fuente</t></li>
-			<li><t>Fichero style.css con el codigo CSS necesario para dar estilo al ejercicio.</t></li>
-			<li><t>Modificar el encabezado del ejercicio con tu nombre</t></li>
-			<li><t>La unica modificacion entre tu ejercicio y este es tu nombre (debes incluir tambien estas instrucciones, mantener colores y tamaños de letra).</t></li>
-			<li><t>La imagen de la cabecera está en esta url https://sso.unileon.es/themes/unileon-metronic/img/main-title.png.</t></li>
-			<li><t>Debes hacer una captura de pantalla con el resultado de tu ejercicio y subirla a 
-				<a href="http://agora.unileon.es">agora</a>
-			(este es un enlace a https://agora.unileon.es).</t></li>
-		</ul>
-	  
+	<div align="center">
+		<img src="https://sso.unileon.es/themes/unileon-metronic/img/main-title.png" >
 	</div>
-
-	<div class="panelIzq">
-		   <table border ="0">
-	    	<tr>
-	    		<td><h3>Formulario</h3></td>
-	    	</tr>
-	    	<tr>
-			    <td width="0%"><label for="fname" >Nombre:</label></td>
-		  		<td width="0%"><input type="text" id="fname" name="fname"></td>
-
-		  	<tr>
-		  		<td width="0%"><label for="birthday">Fecha nacimiento:</label></td>
-		  		<td width="0%"><input type="date" id="birthday" name="birthday"></td>
-		  	</tr>
-
-		  	<tr>
-		  		<td width="0%"><label for="fedad">Edad:</label></td>
-		  		<td width="0%"><input type="text" id="fedad" name="fedad" align="rigth"></td>
-		  	</tr>
-
-		  	<tr>
-				<td width="0%"><label for="female">Sexo:</label></td>
-
-				<td width="0%"><input type="radio" id="male" name="gender" value="male">
-				<label for="male">Hombre</label><br>
-				<input type="radio" id="female" name="gender" value="female">
-				<label for="female">Mujer</label></td>
-			</tr>
-
-			<tr>
-				<td width="0%"><label for="vehicle1">Conoce HTML5:</label></td>
-				<td width="0%"><input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" align="rigth"></td>
-			</tr>
-			<tr>
-				<td width="0%"><label for="favcolor">Color favorito:</label></td>
-				<td width="0%"><input type="color" id="favcolor" name="favcolor" value="#ff0000"></td>
-			</tr>
-			<tr>
-				<td width="0%"><label for="favcolor">Foto</label></td>
-				<td width="0%"><button type="button">Choose files</button>
-				<t>No files chosen</t></td>
-			</tr>
-			<tr>
-				<td width="0%"><button type="button">Enviar</button></td>
-			</tr>
-
-		</table>
-
+	<div align="center">
+			<h2>Ejercicio 1 de "Raul Capellan</h2>
 	</div>
-</div>
+	<div class="division" id="vueApp" v-cloak>
+		<div class="panelDerecha">
+			<h3>Instrucciones ejercicio 1: </h3>
+			<p>Debes replicar los este ejercicio en dos ficheros: </p>
+			<ul>	
+				<li><t>Fichero index.html con el codigo HTML necesario para replicar elmismo contenido.</t></li>
+				<li><t>Fichero style.css con el codigo CSS necesario para dar estilo al ejercicio.</t></li>
+			</ul>
+
+			<p>Ademas debes cumplir los siguientes puntos: </p>
+			
+			<ul>
+				<li><t>Utilizar Github classroom para depositar el codigo fuente</t></li>
+				<li><t>Fichero style.css con el codigo CSS necesario para dar estilo al ejercicio.</t></li>
+				<li><t>Modificar el encabezado del ejercicio con tu nombre</t></li>
+				<li><t>La unica modificacion entre tu ejercicio y este es tu nombre (debes incluir tambien estas instrucciones, mantener colores y tamaños de letra).</t></li>
+				<li><t>La imagen de la cabecera está en esta url https://sso.unileon.es/themes/unileon-metronic/img/main-title.png.</t></li>
+				<li><t>Debes hacer una captura de pantalla con el resultado de tu ejercicio y subirla a 
+					<a href="http://agora.unileon.es">agora</a>
+				(este es un enlace a https://agora.unileon.es).</t></li>
+			</ul>
+		
+		</div>
+
+		<div class="panelIzq">
+			<table border ="0">
+				<tr>
+					<td><h3>Formulario</h3></td>
+				</tr>
+				<tr>
+					<td width="0%"><label for="fname" v-model="nombre">Nombre: </label></td>
+					<td width="0%"><input type="text" id="fname" name="fname" v-model="nombre"> </td>
+
+				<tr>
+					<td width="0%"><label for="birthday">Fecha nacimiento:</label></td>
+					<td width="0%"><input type="date" id="birthday" name="birthday" v-model="fecha"></td>
+				</tr>
+
+				<tr>
+					<td width="0%"><label for="fedad">Edad:</label></td>
+					<td width="0%"><input type="text" id="fedad" name="fedad" align="rigth" v-model="edad"></td>
+				</tr>
+
+				<tr>
+					<td width="0%"><label for="female">Sexo:</label></td>
+					<td width="0%"><input type="radio" id="male" name="gender" value="male" v-model="picked"> 
+					<label for="male">Hombre</label><br>
+					<input type="radio" id="female" name="gender" value="female" v-model="picked">
+					<label for="female">Mujer</label></td>
+				</tr>
+
+				<tr>
+					<td width="0%"><label for="hmlConoce">Conoce HTML5:</label></td>
+					<td width="0%"><input type="checkbox" id="vehicle1" value="HTML1" align="rigth" v-model="htmlCB"></td>
+				</tr>
+				<tr>
+					<td width="0%"><label for="favcolor">Color favorito:</label></td>
+					<td width="0%"><input type="color" id="favcolor" name="favcolor" value="#ff0000" v-model="color"></td>
+				</tr>
+				<tr>
+					<td width="0%"><label for="favcolor">Foto</label></td>
+					<td width="0%"><button type="button">Choose files</button>
+					<t>No files chosen</t></td>
+				</tr>
+				<tr>
+					<td width="0%"><button type="button">Enviar</button></td>
+				</tr>
+
+			</table>
+
+		</div>
+	</div>
+	<script src= "./jsFiles/app.js"></script>
 </body>
 </html>
