@@ -6,7 +6,8 @@ var vueApp = new Vue({
         htmlCB: ["HTML1"],
         picked: 'female',
         color: '#5CA5BB',
-        fecha: '2017-07-04'
+        fecha: '2017-07-04',
+    
     }, 
 
     methods:{
@@ -16,5 +17,5 @@ var vueApp = new Vue({
         clickBotonChooseFiles: function(){
             alert("Has pulsado el boton choose files");
         }
-    }
+    },
 })
