@@ -6,7 +6,7 @@ var url  = require('url');
 var {info, error} = require('./modules/my-log');//Comillas simples y dobles para strings
 var consts = require('./utils/consts');
 var firebase = require('../libs/firebase');
-var {countries} = require("countries-list");
+var {countries} = require('countries-list');
 
 
 var server = http.createServer(function (request, response){
@@ -29,7 +29,7 @@ var server = http.createServer(function (request, response){
         response.write(result);//HTML de inicio que siempre va a mostrar
         response.end();
     }else if(request.url == "/country"){
-        response.writeHead(200, {'Content-Type': 'application/json'});//Todo fue correcto
+        response.writeHead(200, {'Content-Type': "application/json"});//Todo fue correcto
         response.write(JSON.stringify(countries.EC));//HTML de inicio que siempre va a mostrar
         response.end();
     }else{

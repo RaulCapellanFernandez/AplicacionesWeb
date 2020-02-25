@@ -9,6 +9,7 @@
   "author": "Raul Capellan",
   "license": "ULE",
   "dependencies": {
-    "countries-list": "^2.5.1"
+    "countries-list": "^2.5.1",
+    "vue": "^2.6.11"
   }
 }
