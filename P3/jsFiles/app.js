@@ -11,8 +11,9 @@ var vueApp = new Vue({
         colorIZ: "gray",
         fraseColor: "Esta frase va a cambiar a rojo",
         fraseColoraux: false,
-        check: false,
+       
         counter: 0,
+        isNinja: true,
     }, 
     watch: {
         fecha: function (val) {
@@ -28,6 +29,7 @@ var vueApp = new Vue({
                     anios++;
             }
             this.edad = anios;
+            this.edad = this.htmlCB;
             
         },
         picked: function (val) {
@@ -38,6 +40,12 @@ var vueApp = new Vue({
         },
         colorB: function (val) {
             this.colorIZ = this.colorB;
+        },
+        htmlCB:function(val){
+            if(this.htmlCB == "HTML1")
+                this.isNinja = true;
+            else
+                this.isNinja = false;
         },
     },
 

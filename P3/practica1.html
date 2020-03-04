@@ -10,7 +10,7 @@
 
 		<div class="margen" id="vueApp" v-cloak>
 			<div class="titulo" align="center">
-				<img v-if="!check" @click="counter++" src="https://sso.unileon.es/themes/unileon-metronic/img/main-title.png" alt="Unileon.es">
+				<img v-show="isNinja" @click="counter++" src="https://sso.unileon.es/themes/unileon-metronic/img/main-title.png" alt="Unileon.es">
 			</div>
 				 
 			<h2 align="center">Ejercicio 2 de {{nombre}}</h2>
