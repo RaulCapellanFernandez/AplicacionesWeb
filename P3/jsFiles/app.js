@@ -1,5 +1,6 @@
 var vueApp = new Vue({
     el: '#vueApp',
+    
     data: {
         nombre: "Raul Capellan Fernandez",
         edad: "18",
@@ -14,7 +15,14 @@ var vueApp = new Vue({
        
         counter: 0,
         isNinja: true,
+
+        posts: [
+            { id: 1, title: 'Noticia Coronavirus', content: 'Da fiebre' },
+            { id: 2, title: 'Se suspende ITU WTS AbuDhabi', content: 'No se corre'  },
+            { id: 3, title: 'Se suspenden las clases en Madrid', content: 'Por el corona virus' }
+          ],
     }, 
+
     watch: {
         fecha: function (val) {
             var fechaN = new Date(this.fecha);
@@ -65,4 +73,16 @@ var vueApp = new Vue({
     mounted: function () {
         this.cabiaColorFrase()
     },
+
+    
 })
+
+Vue.component('blog-post', {
+    props: ['post'],
+    template: `
+      <div class="blog-post">
+        <h3>{{ post.title }}</h3>
+        <div v-html="post.content"></div>
+      </div>
+    `
+  })

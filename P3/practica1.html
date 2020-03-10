@@ -80,8 +80,17 @@
 						<tr>
 							<td width="0%"><button type="button" @click="clickBotonEnviar()">Enviar</button></td>
 						</tr>
-
+						<tr>
+							<td>
+								<blog-post
+								v-for="post in posts"
+								v-bind:key="post.id"
+								v-bind:post="post"
+								></blog-post>
+							</td>
+						</tr>
 					</table>
+
 				</div>
 			</div>
 		</div>
