@@ -1,0 +1,14 @@
+{
+  "name": "p4-nodejs",
+  "version": "1.0.0",
+  "description": "Ejercicio 4 API REST",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Raul Capellan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
