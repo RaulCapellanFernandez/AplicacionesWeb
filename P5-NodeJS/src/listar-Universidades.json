@@ -1,0 +1,19 @@
+[
+    {
+        "nombreUniversidad" : "UniLeon", 
+        "grados" : [
+            {
+                "nombreGrado": "Grado Ingenieria",
+                "asignaturas": [
+                    {
+                        "nombreAsignatura" : "Aplicaciones Web", 
+                        "curso":3, 
+                        "capacidad":100,
+                        "alumnos": 88,
+                        "profesores":["Raul", "Esteban"]
+                    }
+                ]
+            }
+        ]
+    }
+]
